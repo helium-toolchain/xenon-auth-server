@@ -12,6 +12,16 @@
   </ItemGroup>
 
   <ItemGroup>
+	<None Remove="authconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<EmbeddedResource Include="authconfig.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
 
