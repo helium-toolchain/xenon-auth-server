@@ -7,21 +7,18 @@ public class MsaController : Controller
 {
 	[HttpGet]
 	[Route("/msa")]
-	public ActionResult GetMsaApplicationId()
+	public ActionResult GetMsaApplicationId(
+		[FromHeader]
+		String XClientType)
 	{
 		if(String.IsNullOrWhiteSpace(XenonAuthServer.MsaApplicationId))
 		{
 			return this.NotFound();
 		}
 
-		if(!this.Request.Headers.TryGetValue("X-Client-Type", out StringValues vs))
+		else if(XClientType != "Xenon")
 		{
-			return this.BadRequest();
-		}
-
-		else if(vs[0] != "Xenon")
-		{
-			return this.Forbid();
+			return this.StatusCode(StatusCodes.Status403Forbidden);
 		}
 
 		return this.Ok(XenonAuthServer.MsaApplicationId);
