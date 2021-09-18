@@ -13,17 +13,8 @@ public class XenonAuthServer
 		// Add services to the container.
 
 		_ = builder.Services.AddControllers();
-		_ = builder.Services.AddSwaggerGen(c
-			=> c.SwaggerDoc("v1", new() { Title = "xenon_auth_server", Version = "v1" }));
 
 		WebApplication? app = builder.Build();
-
-		// Configure the HTTP request pipeline.
-		if (app.Environment.IsDevelopment())
-		{
-			_ = app.UseSwagger();
-			_ = app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "xenon_auth_server v1"));
-		}
 
 		_ = app.UseHttpsRedirection();
 
