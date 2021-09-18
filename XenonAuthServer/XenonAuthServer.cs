@@ -5,7 +5,6 @@ using System.Text.Json;
 public class XenonAuthServer
 {
 	public static String MsaApplicationId { get; private set; } = null!;
-	public static String? TokenSalt { get; private set; }
 
 	public static void Main(String[] args)
 	{
@@ -37,7 +36,6 @@ public class XenonAuthServer
 		reader.Close();
 
 		MsaApplicationId = config.MsaApplicationId;
-		TokenSalt = config.TokenSalt;
 
 		app.Run();
 	}

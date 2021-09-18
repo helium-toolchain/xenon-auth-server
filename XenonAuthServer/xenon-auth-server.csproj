@@ -5,6 +5,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Xenon.Auth.Server</RootNamespace>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <Version>0.0.1</Version>
+    <Authors>Helium Toolchain contributors</Authors>
+    <Company>Helium Toolchain</Company>
+    <FileVersion>0.0.1.17</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
